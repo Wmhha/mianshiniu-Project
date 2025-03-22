@@ -18,8 +18,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @MapperScan("com.mhha.mianshiniu.mapper")
 @EnableScheduling
-@ServletComponentScan
-@EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true)
+@ServletComponentScan  //扫描过滤器
+@EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true) //开启切面自动代理，项目中使用到了AopContext.currentProxy()
 public class MainApplication {
 
     public static void main(String[] args) {

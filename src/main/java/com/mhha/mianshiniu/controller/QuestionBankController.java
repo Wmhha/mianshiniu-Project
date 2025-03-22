@@ -183,7 +183,7 @@ public class QuestionBankController {
 
         // todo 取消注释开启 HotKey（须确保 HotKey 依赖被打进 jar 包）
 //        // 设置本地缓存（如果不是热 key，这个方法不会设置缓存）
-//        JdHotKeyStore.smartSet(key, questionBankVO);
+        JdHotKeyStore.smartSet(key, questionBankVO);
 
         // 获取封装类
         return ResultUtils.success(questionBankVO);

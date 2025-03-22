@@ -239,7 +239,7 @@ public class QuestionBankQuestionServiceImpl extends ServiceImpl<QuestionBankQue
         QuestionBank questionBank = questionBankService.getById(questionBankId);
         ThrowUtils.throwIf(questionBank == null, ErrorCode.NOT_FOUND_ERROR, "题库不存在");
 
-        // 自定义线程池（IO 密集型线程池）
+        // 自定义线程池（IO 密集型线程池） 批量添加题目功能，和数据库交互频繁，属于 IO 密集型任务，可以给自定义线程池更大的核心线程数
         ThreadPoolExecutor customExecutor = new ThreadPoolExecutor(
                 20,             // 核心线程数
                 50,                        // 最大线程数
